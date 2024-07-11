@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+    <link rel="stylesheet" href="orderStyles.css">
+</head>
+<body>
+    <form action="https://formsubmit.co/josstuazon@gmail.com" method="POST">
+        <h2>Order Form</h2>
+        <div class="inputBox">
+            <div class="checkboxGroup">
+                <input type="checkbox" name="selectdrink" value="Kapebara Special" id="drink1">
+                <label for="drink1">Kapebara Special - P195</label>
+            </div>
+            <div class="checkboxGroup">
+                <input type="checkbox" name="selectdrink" value="French Vanilla Coldbrew" id="drink2">
+                <label for="drink2">French Vanilla Coldbrew - P210</label>
+            </div>
+            <div class="checkboxGroup">
+                <input type="checkbox" name="selectdrink" value="Kapyccino" id="drink3">
+                <label for="drink3">Kapyccino - P200</label>
+            </div>
+        </div>
+        <div class="inputBox">
+            <input type="email" name="email" required>
+            <label>EMail</label>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="address" required>
+            <label>Enter &nbsp; Address</label>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="contact_num" required>
+            <label>Contact &nbsp; Number</label>
+        </div>
+        <div class="inputBox">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+   
+    <script>
+        document.querySelectorAll('.inputBox input[type="text"], .inputBox input[type="email"]').forEach(input => {
+            let label = input.nextElementSibling;
+            label.innerHTML = label.innerText.split('').map((letter, i) =>
+                `<span style="transition-delay:${i * 50}ms">${letter}</span>`
+            ).join('');
+        });
+    </script>
+</body>
+</html>
